@@ -47,9 +47,9 @@
 }
 
 :root {
-    --background: #eee;
-    --text-color: #000;
-    --text-area-background: #fff;
+    --background: #ffffff;
+    --text-color: #24292f;
+    --text-area-background: #f6f8fa;
 }
 
 :root,
@@ -94,22 +94,17 @@ form {
 
 textarea {
     grid-area: latex;
-
-    padding: 0.5em;
-    min-height: 360px;
     justify-self: stretch;
     resize: vertical;
-
-    border: none;
-    border-radius: 8px;
-
-    background-color: var(--text-area-background);
-    color: inherit;
 }
 
 code {
     display: block;
     text-align: left;
+}
+
+textarea,
+code {
     padding: 0.5em;
     min-height: 360px;
 
@@ -122,7 +117,6 @@ code {
 
 output {
     grid-area: output;
-
     text-align: center;
 }
 
@@ -130,11 +124,9 @@ output {
     grid-area: inline;
 }
 
-output[output-type="img"] > :not(img) {
-    display: none;
-}
-
-output[output-type="gh"] > :not(code) {
+output[output-type="img"] > :not(img),
+output[output-type="gh"] > :not(code),
+.dark {
     display: none;
 }
 
@@ -142,9 +134,6 @@ img {
     max-width: 100%;
 }
 
-.dark {
-    display: none;
-}
 .light {
     display: initial;
 }
@@ -152,7 +141,7 @@ img {
 @media (prefers-color-scheme: dark) {
     :root {
         --background: #0d1117;
-        --text-color: #fff;
+        --text-color: #c9d1d9;
         --text-area-background: #161b22;
     }
 
