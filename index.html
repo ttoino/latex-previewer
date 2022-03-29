@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="style.css" />
+
+        <title>LaTeX Previewer</title>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> Previewer
+            </h1>
+        </header>
+
+        <form>
+            <label for="latex" class="sr-only">LaTeX input</label>
+            <textarea name="latex" id="latex" oninput="latexChanged"></textarea>
+            <label id="inline">
+                <input type="checkbox" name="inline" />
+                Inline
+            </label>
+            <label id="type">
+                Output type:
+                <select name="type">
+                    <option value="img">Image</option>
+                    <option value="gh">GitHub markdown</option>
+                </select>
+            </label>
+            <output output-type="img">
+                <code lang="markdown"></code>
+                <img src="" alt="" class="light" />
+                <img src="" alt="" class="dark" />
+            </output>
+        </form>
+
+        <footer>&copy; Toino</footer>
+
+        <script src="script.js" defer></script>
+    </body>
+</html>
