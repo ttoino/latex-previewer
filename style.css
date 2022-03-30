@@ -92,21 +92,23 @@ form {
     flex: 1;
 }
 
-textarea {
+form > textarea {
     grid-area: latex;
     justify-self: stretch;
-    resize: vertical;
+    white-space: pre;
 }
 
-code {
-    display: block;
+output > textarea {
     text-align: left;
+    width: 100%;
+    word-break: break-all;
 }
 
-textarea,
-code {
+textarea {
     padding: 0.5em;
     min-height: 360px;
+    resize: vertical;
+    font-family: monospace;
 
     border: none;
     border-radius: 8px;
@@ -116,6 +118,7 @@ code {
 }
 
 output {
+    justify-self: stretch;
     grid-area: output;
     text-align: center;
 }
@@ -125,7 +128,7 @@ output {
 }
 
 output[output-type="img"] > :not(img),
-output[output-type="gh"] > :not(code),
+output[output-type="gh"] > :not(textarea),
 .dark {
     display: none;
 }
